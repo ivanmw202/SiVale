@@ -1,0 +1,13 @@
+<div class="modal-background" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h2>{{ pokemon.name | capitalize }}</h2>
+      <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+      <ul>
+        <li *ngFor="let stat of pokemon.stats">
+          {{ stat.stat.name | capitalize }}: {{ stat.base_stat }}
+        </li>
+      </ul>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>
+  

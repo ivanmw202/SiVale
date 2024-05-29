@@ -1,0 +1,9 @@
+<div class="pokemon-list">
+    <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (click)="openModal(pokemon)"></app-pokemon-card>
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="!previous">Previous</button>
+      <button (click)="nextPage()" [disabled]="!next">Next</button>
+    </div>
+  </div>
+  <app-pokemon-modal [pokemon]="selectedPokemon" *ngIf="showModal" (close)="closeModal()"></app-pokemon-modal>
+  
